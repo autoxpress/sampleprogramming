@@ -9,8 +9,8 @@ public class InstantTimeFormat {
 
     public static void main(String[] args) {
 
-        String firstDateStr = "2018-09-21 11:47:36";
-        String secondDateStr = "2018-09-21 11:47:31";
+        String firstDateStr = "2019-08-11 10:47:36";
+        String secondDateStr = "2019-08-11 10:47:31";
         //Convert String to UTC time format
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("uuuu-MM-dd HH:mm:ss").withZone(ZoneOffset.UTC);
         Instant instant_firstDateStr = ZonedDateTime.parse(firstDateStr, formatter).toInstant();
@@ -18,8 +18,8 @@ public class InstantTimeFormat {
         Assert.assertTrue(((instant_firstDateStr.toEpochMilli() - instant_secondDateStr.toEpochMilli()) / 1000 > 0) 
                           && (instant_firstDateStr.toEpochMilli() - instant_secondDateStr.toEpochMilli()) / 1000 <= 3);
 
-        firstDateStr = "2018-09-21 11:47:34";
-        secondDateStr = "2018-09-21 11:47:36";
+        firstDateStr = "2019-08-11 09:47:34";
+        secondDateStr = "2019-08-11 09:47:36";
 
         instant_firstDateStr = ZonedDateTime.parse(firstDateStr, formatter).toInstant();
         instant_secondDateStr = ZonedDateTime.parse(secondDateStr, formatter).toInstant();
