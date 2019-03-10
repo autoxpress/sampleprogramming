@@ -10,7 +10,7 @@ import java.util.List;
 
 public class LambdaExpression{
 
-
+// Here, map method is used to convert to the elements of the stream into a whatever type 
     private void performStreamMap() {
         List<WebElement> list = new ArrayList<WebElement>();
         WebElement element = list.stream().map(webelement -> 
