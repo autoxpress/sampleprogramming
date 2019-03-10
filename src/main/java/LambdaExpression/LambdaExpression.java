@@ -17,6 +17,8 @@ public class LambdaExpression{
                              webelement.findElement(By.id("customer_name"))).findFirst().orElse(null);
         String elementName = list.stream().map(text -> 
                              text.findElement(By.id("customer_name")).getAttribute("name")).findFirst().orElse(null);
+   
+        
     }
 
     private void performStreamMapFilter() {
@@ -36,6 +38,12 @@ public class LambdaExpression{
                            webElements.findElements(By.tagName("td"))) 
                           .filter(element -> element.get(0).getText().equals("offset")) 
                           .map(element -> element.get(1)).findFirst().orElse(null); 
+        
+        //Convert the output values into List/Map/Set
+         List<WebElement> webeleList = elementList.stream().map(webElements -> 
+                           webElements.findElements(By.tagName("td"))) 
+                          .filter(element -> element.get(0).getText().equals("offset")) 
+                          .collect(Collectors.toList());
 
     }
 }
